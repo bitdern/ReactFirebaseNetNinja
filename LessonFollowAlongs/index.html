@@ -25,9 +25,24 @@
 
     <script type="text/babel">
       const Banner = () => {
+        const title = "welcome to the webby";
+        const subtitle = "on this here webby, we learning how to use react!";
+
+        // const handleClick = () => {
+        //   console.log("clicky wicky");
+        // };
+
         return (
-          <div>
-            <p>banner</p>
+          <div className="banner">
+            <h2>{title.toUpperCase()}</h2>
+            <p>{subtitle}</p>
+            <button
+              onClick={(e) => {
+                console.log("e");
+              }}
+            >
+              Click hurrrrr
+            </button>
           </div>
         );
       };
