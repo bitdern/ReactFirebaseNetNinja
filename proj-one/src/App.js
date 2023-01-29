@@ -8,13 +8,15 @@ import NewEventForm from "./components/NewEventForm";
 function App() {
   const [showModal, setShowModal] = useState(false);
   const [showEvents, setShowEvents] = useState(true);
-  const [events, setEvents] = useState([
-    { title: "mario's birthday bash", id: 1 },
-    { title: "bowser live stream", id: 2 },
-    { title: "race on moo moo farm", id: 3 },
-  ]);
+  const [events, setEvents] = useState([]);
 
-  console.log(showEvents);
+  const addEvent = (event) => {
+    setEvents((prevEvents) => {
+      return [...prevEvents, event];
+    });
+
+    setShowModal(false);
+  };
 
   const handleClick = (id) => {
     setEvents((prevEvents) => {
@@ -22,11 +24,7 @@ function App() {
         return id !== event.id;
       });
     });
-    console.log(showModal);
-  };
-
-  const handleClose = () => {
-    setShowModal(false);
+    console.log(id);
   };
 
   const subtitle = "the latest and greatest events widdit";
@@ -48,8 +46,8 @@ function App() {
       {showEvents && <Eventlist events={events} handleClick={handleClick} />}
 
       {showModal && (
-        <Modal handleClose={handleClose} isSalesModal={true}>
-          <NewEventForm />
+        <Modal isSalesModal={true}>
+          <NewEventForm addEvent={addEvent} />
         </Modal>
       )}
 
