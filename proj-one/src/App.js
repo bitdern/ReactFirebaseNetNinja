@@ -47,7 +47,7 @@ function App() {
       {showEvents && <Eventlist events={events} handleClick={handleClick} />}
 
       {showModal && (
-        <Modal handleClose={handleClose}>
+        <Modal handleClose={handleClose} isSalesModal={true}>
           <h2>WAT u mean?!?</h2>
           <p>enter code "blintz" to recieve de la RIEN!</p>
         </Modal>
