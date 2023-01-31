@@ -1,5 +1,10 @@
 import "./App.css";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  NavLink,
+} from "react-router-dom";
 
 //page components
 import Home from "./pages/Home";
@@ -12,6 +17,9 @@ function App() {
       <div className="App">
         <nav>
           <h1>My Articles</h1>
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/about">About</NavLink>
+          <NavLink to="/contact">Contact</NavLink>
         </nav>
         <Routes>
           <Route exact path="/" element={<Home />} />
