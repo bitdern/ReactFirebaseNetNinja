@@ -10,6 +10,7 @@ import {
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
+import Article from "./pages/Article";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route exact path="/about" element={<About />} />
           <Route exact path="/contact" element={<Contact />} />
+          <Route path="/articles/:id" element={<Article />} />
         </Routes>
       </div>
     </Router>
