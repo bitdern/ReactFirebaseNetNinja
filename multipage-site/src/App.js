@@ -4,6 +4,7 @@ import {
   Route,
   Routes,
   NavLink,
+  Navigate,
 } from "react-router-dom";
 
 //page components
@@ -27,6 +28,7 @@ function App() {
           <Route exact path="/about" element={<About />} />
           <Route exact path="/contact" element={<Contact />} />
           <Route path="/articles/:id" element={<Article />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </div>
     </Router>

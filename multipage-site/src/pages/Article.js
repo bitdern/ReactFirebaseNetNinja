@@ -1,10 +1,21 @@
-import { useParams } from "react-router-dom";
+import { useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { useFetch } from "../hooks/usefetch";
 
 export default function Articles() {
   const { id } = useParams();
   const url = "http://localhost:3000/articles/" + id;
   const { data: article, isPending, error } = useFetch(url);
+  const history = useNavigate();
+
+  useEffect(() => {
+    if (error) {
+      //redirect
+      setTimeout(() => {
+        history.push("/");
+      }, 2000);
+    }
+  }, [error, history]);
 
   return (
     <div>
