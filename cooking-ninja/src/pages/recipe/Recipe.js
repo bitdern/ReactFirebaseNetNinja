@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useFetch } from "../../hooks/usefetch";
 
 // styles
@@ -8,16 +8,6 @@ export default function Recipe() {
   const { id } = useParams();
   const url = "http://localhost:3000/recipes/" + id;
   const { data: recipe, isPending, error } = useFetch(url);
-  const navigate = useNavigate();
-
-  // deleting a recipe
-  const handleClick = () => {
-    fetch("http://localhost:3000/recipes/" + recipe.id, {
-      method: "DELETE",
-    }).then(() => {
-      navigate("/");
-    });
-  };
 
   return (
     <div className="recipe">
@@ -33,7 +23,6 @@ export default function Recipe() {
             ))}
           </ul>
           <p className="method">{recipe.method}</p>
-          <button onClick={handleClick}>delete recipe</button>
         </>
       )}
     </div>

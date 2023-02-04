@@ -10,6 +10,5 @@ ReactDOM.render(
       <App />
     </ThemeProvider>
   </React.StrictMode>,
-
   document.getElementById("root")
 );
