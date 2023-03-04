@@ -7,12 +7,12 @@ import styles from "./Signup.module.css";
 export default function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [userName, setUserName] = useState("");
+  const [displayName, setDisplayName] = useState("");
   const { signup, isPending, error } = useSignup();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    signup(email, userName, password);
+    signup(email, displayName, password);
   };
 
   return (
@@ -32,8 +32,8 @@ export default function Signup() {
         <span>user name:</span>
         <input
           type="text"
-          onChange={(e) => setUserName(e.target.value)}
-          value={userName}
+          onChange={(e) => setDisplayName(e.target.value)}
+          value={displayName}
         />
       </label>
       <label>
