@@ -29,14 +29,6 @@ export default function Signup() {
         </span>
       </label>
       <label>
-        <span>user name:</span>
-        <input
-          type="text"
-          onChange={(e) => setDisplayName(e.target.value)}
-          value={displayName}
-        />
-      </label>
-      <label>
         <span>password:</span>
         <input
           type="password"
@@ -44,6 +36,15 @@ export default function Signup() {
           value={password}
         />
       </label>
+      <label>
+        <span>user name:</span>
+        <input
+          type="text"
+          onChange={(e) => setDisplayName(e.target.value)}
+          value={displayName}
+        />
+      </label>
+
       {!isPending && <button className="btn">Sign Up</button>}
       {isPending && (
         <button className="btn" disabled>
